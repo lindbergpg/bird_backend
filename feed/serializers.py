@@ -7,7 +7,8 @@ from feed.models import Post
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username']
+        fields = ["id", "username"]
+
 
 class PostSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
@@ -15,8 +16,8 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'description', 'created_at', 'user', 'can_delete']
+        fields = ["id", "description", "created_at", "user", "can_delete"]
 
     def get_can_delete(self, obj):
-        request = self.context.get('request')
+        request = self.context.get("request")
         return obj.user == request.user
