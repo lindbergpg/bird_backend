@@ -27,7 +27,8 @@ SECRET_KEY = "django-insecure-kze$!-$n0#$y67lu2g#x1^5-*h0*z%56k$-v))jm+n*v34a*66
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bird-api-265ef50da0d8.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 'bird-api-265ef50da0d8.herokuapp.com']
 
 
 # Application definition
@@ -163,7 +164,10 @@ SIMPLE_JWT = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://bird-wheat.vercel.app",
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
